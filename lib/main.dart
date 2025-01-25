@@ -286,6 +286,11 @@ class MyHomePageState extends State<MyHomePage> {
     'Tuvalu',
     'Saudi Arabia',
     'Fiji',
+    'Turks and Caicos Is.',
+    'Heard I. and McDonald Is.',
+    'Taiwan',
+    'eSwatini',
+    'Åland'
   };
 
   @override
@@ -315,7 +320,7 @@ class MyHomePageState extends State<MyHomePage> {
         return data[index].storage;
       },
       shapeColorMappers: [
-        MapColorMapper(value: "High", color: Colors.green),
+        MapColorMapper(value: "High", color: Colors.green.shade800),
         MapColorMapper(value: "Not Visited", color: Colors.grey.shade300),
       ],
     );
@@ -327,15 +332,15 @@ class MyHomePageState extends State<MyHomePage> {
       body: Stack(
         children: [
           InteractiveViewer(
-            // boundaryMargin: const EdgeInsets.all(8.0),
-            minScale: 0.4,
+            boundaryMargin: const EdgeInsets.all(8.0),
+            minScale: 0.3,
             maxScale: 5.0,
             child: SfMaps(
               layers: <MapShapeLayer>[
                 MapShapeLayer(
                   source: dataSource,
                   legend: const MapLegend(MapElement.shape),
-                  strokeWidth: 0.3, // Adjust the border width here
+                  strokeWidth: 0.1, // Adjust the border width here
                   strokeColor: Colors.black38,
                   onSelectionChanged: (int index) {
                     final String countryName = data[index].country;
