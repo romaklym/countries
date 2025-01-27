@@ -290,7 +290,8 @@ class MyHomePageState extends State<MyHomePage> {
     'Heard I. and McDonald Is.',
     'Taiwan',
     'eSwatini',
-    'Åland'
+    'Åland',
+    'Canada'
   };
 
   @override
@@ -343,7 +344,7 @@ class MyHomePageState extends State<MyHomePage> {
               ),
               height: 400,
               child: InteractiveViewer(
-                boundaryMargin: const EdgeInsets.all(8.0),
+                boundaryMargin: const EdgeInsets.all(16.0),
                 minScale: 0.3,
                 maxScale: 5.0,
                 child: SfMaps(
