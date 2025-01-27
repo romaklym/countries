@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_maps/maps.dart';
+import 'package:flutter/foundation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -342,10 +343,10 @@ class MyHomePageState extends State<MyHomePage> {
                   color: Colors.black,
                 ),
               ),
-              height: 400,
+              height: !kIsWeb ? 400 : null,
               child: InteractiveViewer(
                 boundaryMargin: const EdgeInsets.all(16.0),
-                minScale: 0.3,
+                minScale: !kIsWeb ? 0.3 : 0.1,
                 maxScale: 5.0,
                 child: SfMaps(
                   layers: <MapShapeLayer>[
