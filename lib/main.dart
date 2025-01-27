@@ -331,28 +331,41 @@ class MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Stack(
         children: [
-          InteractiveViewer(
-            boundaryMargin: const EdgeInsets.all(8.0),
-            minScale: 0.3,
-            maxScale: 5.0,
-            child: SfMaps(
-              layers: <MapShapeLayer>[
-                MapShapeLayer(
-                  source: dataSource,
-                  legend: const MapLegend(MapElement.shape),
-                  strokeWidth: 0.1, // Adjust the border width here
-                  strokeColor: Colors.black38,
-                  onSelectionChanged: (int index) {
-                    final String countryName = data[index].country;
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('You clicked on: $countryName'),
-                        duration: const Duration(seconds: 2),
-                      ),
-                    );
-                  },
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.0),
+                border: Border.all(
+                  width: 2.0,
+                  color: Colors.black,
                 ),
-              ],
+              ),
+              height: 400,
+              child: InteractiveViewer(
+                boundaryMargin: const EdgeInsets.all(8.0),
+                minScale: 0.3,
+                maxScale: 5.0,
+                child: SfMaps(
+                  layers: <MapShapeLayer>[
+                    MapShapeLayer(
+                      source: dataSource,
+                      legend: const MapLegend(MapElement.shape),
+                      strokeWidth: 0.1, // Adjust the border width here
+                      strokeColor: Colors.black38,
+                      onSelectionChanged: (int index) {
+                        final String countryName = data[index].country;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('You clicked on: $countryName'),
+                            duration: const Duration(seconds: 2),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
