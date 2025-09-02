@@ -77,3 +77,13 @@ The app requires location permissions to center the map on your current location
 ## Contributing
 
 Feel free to submit issues and pull requests to improve the app!
+
+## Screenshots
+
+![Main Map View](screenshots/Screenshot_1756785348.png)
+![Country Dialog](screenshots/Screenshot_1756785353.png)
+![Zoom Controls and Legend](screenshots/Screenshot_1756785358.png) 
+![Map 1](screenshots/Screenshot_1756785365.png)
+![Map 2](screenshots/Screenshot_1756785367.png)
+![Map 3](screenshots/Screenshot_1756785379.png)
+
